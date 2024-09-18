@@ -1,3 +1,50 @@
+// Função 1: maiorNumero
+export const maiorNumero = (lista) => {
+  if (!Array.isArray(lista) || lista.length === 0) {
+    return null;
+  }
+  return Math.max(...lista);
+};
+
+// Função 2: verificarParOuImpar
+export const verificarParOuImpar = (numero) => {
+  if (typeof numero !== 'number' || isNaN(numero)) {
+    return null;
+  }
+  return numero % 2 === 0 ? "Par" : "Ímpar";
+};
+
+// Função 3: contarCaracterA
+export const contarCaracter = (string, caractere) => {
+  if (typeof string !== 'string' || typeof caractere !== 'string' || caractere.length !== 1) {
+    return null;
+  }
+
+  let contador = 0;
+  let i = 0;
+
+  while (i < string.length) {
+    if (string[i].toLowerCase() === caractere.toLowerCase()) {
+      contador++;
+    }
+    i++;
+  }
+
+  return contador;
+};
+
+// Função 4: atualizarPropriedade
+export const atualizarPropriedade = (objeto, chave, valor) => {
+  if (typeof objeto !== 'object' || objeto === null || !objeto.hasOwnProperty(chave)) {
+    return null;
+  }
+  objeto[chave] = valor;
+  return objeto;
+};
+
+
+
+
 import { describe, it, expect } from "bun:test";
 import {
   maiorNumero,
