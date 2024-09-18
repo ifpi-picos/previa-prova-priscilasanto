@@ -29,6 +29,7 @@ describe("verificarParOuImpar", () => {
   });
   it("deve retornar null para entradas inválidas", () => {
     expect(verificarParOuImpar("não é um número")).toBe(null);
+    expect(verificarParOuImpar(NaN)).toBe(null);
   });
 });
 
@@ -40,6 +41,7 @@ describe("contarCaracter", () => {
   it("deve retornar null para entradas inválidas", () => {
     expect(contarCaracter(12345, "b")).toBe(null);
     expect(contarCaracter("texto", "ab")).toBe(null);
+    expect(contarCaracter("texto", "")).toBe(null); // Teste para caractere vazio
   });
 });
 
@@ -55,5 +57,9 @@ describe("atualizarPropriedade", () => {
   it("deve retornar null se a propriedade não existir", () => {
     const objeto = { nome: "João" };
     expect(atualizarPropriedade(objeto, "altura", 1.8)).toBe(null);
+  });
+  it("deve retornar null se o objeto for inválido", () => {
+    expect(atualizarPropriedade(null, "altura", 1.8)).toBe(null);
+    expect(atualizarPropriedade({}, "altura", 1.8)).toBe(null);
   });
 });
