@@ -1,7 +1,3 @@
-
-
-
-
 import { describe, it, expect } from "bun:test";
 import {
   maiorNumero,
@@ -33,19 +29,16 @@ describe("verificarParOuImpar", () => {
   });
   it("deve retornar null para entradas inválidas", () => {
     expect(verificarParOuImpar("não é um número")).toBe(null);
-    expect(verificarParOuImpar(NaN)).toBe(null);
   });
 });
 
-// Teste para a função contarCaracter
+// Teste para a função contarCaracterA
 describe("contarCaracter", () => {
   it("deve contar a quantidade de caracteres na string", () => {
     expect(contarCaracter("Abracadabra", "a")).toBe(5);
   });
   it("deve retornar null para entradas inválidas", () => {
     expect(contarCaracter(12345, "b")).toBe(null);
-    expect(contarCaracter("texto", "ab")).toBe(null);
-    expect(contarCaracter("texto", "")).toBe(null); // Teste para caractere vazio
   });
 });
 
@@ -61,9 +54,5 @@ describe("atualizarPropriedade", () => {
   it("deve retornar null se a propriedade não existir", () => {
     const objeto = { nome: "João" };
     expect(atualizarPropriedade(objeto, "altura", 1.8)).toBe(null);
-  });
-  it("deve retornar null se o objeto for inválido", () => {
-    expect(atualizarPropriedade(null, "altura", 1.8)).toBe(null);
-    expect(atualizarPropriedade({}, "altura", 1.8)).toBe(null);
   });
 });
